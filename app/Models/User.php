@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_names',
         'email',
         'password',
     ];
@@ -42,4 +43,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Assuming you have a relationship with the Vehicle model for ownership
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class, 'owner');
+    }
+
+    public function ownershipHistoryPrevious()
+    {
+        return $this->hasMany(VehicleOwnershipHistory::class, 'previous_owner');
+    }
+
+    public function ownershipHistoryNew()
+    {
+        return $this->hasMany(VehicleOwnershipHistory::class, 'new_owner');
+    }
 }
