@@ -16,11 +16,11 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->integer('year');
-            $table->unsignedBigInteger('owner'); // FK
+            $table->unsignedBigInteger('owner_id'); // FK
             $table->integer('price');
             $table->timestamps();
 
-            $table->foreign('owner')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
         
     }

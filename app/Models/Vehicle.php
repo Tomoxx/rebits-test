@@ -4,26 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Vehicle extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'id',
         'brand',
         'model',
         'year',
-        'owner',
+        'owner_id',
         'price',
     ];
 
     public function owner()
     {
-        return $this->belongsTo(User::class, 'dueno');
+        return $this->belongsTo(User::class)->withTrashed();
     }
 
-    // You might also want to define a relationship for the ownership history
     public function ownershipHistory()
     {
         return $this->hasMany(VehicleOwnershipHistory::class, 'vehicle_id');
