@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        $products = User::all();
-        return view('users.index', ['users' => $products]);
+        $users = User::all();
+        return view('users.index', ['users' => $users]);
     }
 
     public function create(){
@@ -48,6 +48,7 @@ class UserController extends Controller
             
             return redirect(route('user.index'))->with('success','User updated successfully');
         }
+        
     public function destroy(User $user){
         $user->delete();
         return redirect(route('user.index'))->with('success','User deleted successfully');

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>User</h1>
+    <h1>Vehicle</h1>
     <div>
         @if (session()->has('success'))
             <div>
@@ -16,29 +16,33 @@
         @endif
     </div>
     <div>
-        <a href="{{route('user.create')}}">Create user</a>
+        <a href="{{route('vehicle.create')}}">Create vehicle</a>
     </div>
     <div>
         <table border="1">
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Last Names</th>
-                <th>Email</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Owner</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach ($users as $user)
+            @foreach ($vehicles as $vehicle)
                 <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->last_names}}</td>
-                    <td>{{$user->email}}</td>
+                    <td>{{$vehicle->id}}</td>
+                    <td>{{$vehicle->brand}}</td>
+                    <td>{{$vehicle->model}}</td>
+                    <td>{{$vehicle->year}}</td>
+                    <td>{{$vehicle->price}}</td>
+                    <td>{{$vehicle->owner->name}} {{$vehicle->owner->last_names}}</td>
                     <td>
-                        <a href="{{route('user.edit', ['user' => $user])}}">Edit</a>
+                        <a href="{{route('vehicle.edit', ['vehicle' => $vehicle])}}">Edit</a>
                     </td>
                     <td>
-                        <form method="post" action="{{route('user.destroy', ['user' => $user])}}">
+                        <form method="post" action="{{route('vehicle.destroy', ['vehicle' => $vehicle])}}">
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete"/>
