@@ -12,6 +12,20 @@ class UserTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_can_get_to_user_index()
+    {
+        $response = $this->get('/user');
+        $response->assertStatus(200);
+    }
+
+    /** @test */
+    public function it_can_get_to_user_create()
+    {
+        $response = $this->get('/user/create');
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     public function it_can_create_a_user()
     {
         // Arrange
@@ -24,7 +38,6 @@ class UserTest extends TestCase
 
         // Act
         $user = User::create($userData);
-        echo $user;
 
         // Assert
         $this->assertInstanceOf(User::class, $user);
