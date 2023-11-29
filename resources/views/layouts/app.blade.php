@@ -23,9 +23,5 @@
     <div class="content">
         @yield('content')
     </div>
-
-    <footer>
-        <p>Tomoxx's Laravel App</p>
-    </footer>
 </body>
 </html>
