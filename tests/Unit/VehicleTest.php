@@ -10,7 +10,7 @@ use App\Models\Vehicle;
 
 class VehicleTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase; // To my knowledge, this is currently fully refreshing the database and applying the migrations again (migrate:fresh)
 
     /** @test */
     public function it_can_get_to_vehicle_index()

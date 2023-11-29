@@ -1,7 +1,8 @@
-Use /vehicle , /user and /vehiclehistory To navigate through each models index/CRUD pages. 
+Se puede usar /vehicle , /user , /vehiclehistory Para navegar las paginas index/CRUD de cada modelo. 
+Considerar que al usar Unit Testing se reiniciara la base datos, reaplicando migraciones.
 
 
-Database Relation
+Database Relation Model
 
 ![image](https://github.com/Tomoxx/rebits-test/assets/91291990/ec6b9109-7d17-444e-ad84-68125242a3f5)
 
