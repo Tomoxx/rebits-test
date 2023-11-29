@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Vehicle</title>
 </head>
 <body>
-    <h1>Edit a User</h1>
+    <h1>Editing '{{$vehicle->brand}} {{$vehicle->model}} {{$vehicle->year}}'</h1>
     <div>
         @if ($errors->any())
         <ul>
@@ -46,7 +46,7 @@
         </div>
         <div>
             <label>
-                Owner
+                Owner (ID)
             </label>
             <input type="text" name="owner_id" placeholder="1" value="{{$vehicle->owner->name}} {{$vehicle->owner->last_names}}" />
         </div>

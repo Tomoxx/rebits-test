@@ -1,3 +1,6 @@
+Use /vehicle , /user and /vehiclehistory To navigate through each models index/CRUD pages. 
+
+
 Database Relation
 
 ![image](https://github.com/Tomoxx/rebits-test/assets/91291990/ec6b9109-7d17-444e-ad84-68125242a3f5)

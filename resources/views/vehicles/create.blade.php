@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create Vehicle</title>
 </head>
 <body>
     <h1>Create a Vehicle</h1>
@@ -46,7 +46,7 @@
         </div>
         <div>
             <label>
-                Owner
+                Owner (ID)
             </label>
             <input type="text" name="owner_id" placeholder="Owner" />
         </div>
